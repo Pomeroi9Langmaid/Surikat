@@ -3,579 +3,198 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Surikat Interview Cheat Sheet</title>
+  <title>Surikat Interview Prep</title>
   <style>
-    :root {
-      --bg: #f4f6f8;
-      --card: #ffffff;
-      --ink: #17202a;
-      --muted: #5f6b76;
-      --line: #d8dee4;
-      --accent: #234a75;
-      --accent-soft: #eaf1f8;
-      --ask: #5a3f78;
-      --ask-soft: #f1ecf7;
-      --gold: #8a6415;
+    :root{
+      --bg:#f3f6f9;--card:#fff;--ink:#16202b;--muted:#627080;--line:#d9e0e7;
+      --blue:#214f7b;--blue-soft:#eaf2f9;--purple:#684681;--purple-soft:#f2edf7;
+      --green:#287257;--green-soft:#e9f5ef;--amber:#966918;--amber-soft:#fbf3df;
+      --red:#9a4242;--red-soft:#f9ecec;--shadow:0 6px 22px rgba(20,35,50,.06)
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      font-size: 13px;
-      line-height: 1.34;
-    }
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 8px 14px;
-      background: rgba(255,255,255,.96);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(8px);
-    }
-    h1 {
-      margin: 0;
-      font-size: 18px;
-      letter-spacing: -.01em;
-    }
-    .subtitle { color: var(--muted); font-size: 12px; }
-    .nav { display: flex; gap: 6px; flex-wrap: wrap; }
-    .nav a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 700;
-      border: 1px solid var(--line);
-      background: #fff;
-      padding: 5px 8px;
-      border-radius: 7px;
-    }
-    main { width: 100%; padding: 10px 12px 18px; }
-    .legend {
-      margin: 0 0 8px;
-      padding: 7px 10px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: #fff;
-      color: var(--muted);
-    }
-    .legend strong { color: var(--ink); }
-    .section-title {
-      margin: 10px 0 7px;
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-      font-size: 15px;
-    }
-    .section-title span { color: var(--muted); font-size: 11px; font-weight: 500; }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 8px;
-      align-items: start;
-    }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 9px;
-      padding: 8px 9px;
-      break-inside: avoid;
-      box-shadow: 0 1px 2px rgba(0,0,0,.025);
-    }
-    .card h3 {
-      margin: 0 0 6px;
-      font-size: 13.5px;
-      line-height: 1.18;
-      color: var(--accent);
-    }
-    .ask-card h3 { color: var(--ask); }
-    .card ul { margin: 0; padding-left: 17px; }
-    .card li { margin: 0 0 4px; }
-    .card li:last-child { margin-bottom: 0; }
-    strong { font-weight: 800; color: #101820; }
-    .key {
-      margin-top: 6px;
-      padding: 5px 7px;
-      border-radius: 6px;
-      background: var(--accent-soft);
-      color: #263646;
-      font-weight: 650;
-    }
-    .ask-card .key { background: var(--ask-soft); }
-    .numbers {
-      display: grid;
-      grid-template-columns: repeat(6, minmax(0,1fr));
-      gap: 6px;
-      margin: 8px 0 4px;
-    }
-    .number {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 7px 8px;
-      text-align: center;
-    }
-    .number b { display:block; font-size: 15px; color: var(--gold); }
-    .number span { color: var(--muted); font-size: 11px; }
-    .footer-note {
-      margin-top: 10px;
-      padding: 8px 10px;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      color: var(--muted);
-    }
-    @media (max-width: 1450px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-    @media (max-width: 1000px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .numbers { grid-template-columns: repeat(3,1fr); } }
-    @media (max-width: 650px) {
-      body { font-size: 14px; }
-      header { position: static; align-items: flex-start; flex-direction: column; }
-      .grid { grid-template-columns: 1fr; }
-      .numbers { grid-template-columns: repeat(2,1fr); }
-    }
-    @media print {
-      header { position: static; }
-      body { background: #fff; font-size: 10px; }
-      main { padding: 4px; }
-      .grid { grid-template-columns: repeat(4, 1fr); gap: 4px; }
-      .card { box-shadow: none; padding: 5px; }
-      .nav { display: none; }
-    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:14px;line-height:1.42}
+    button,textarea{font:inherit}strong{font-weight:800;color:#0f1821}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:10px 16px 8px}
+    .headrow{display:flex;justify-content:space-between;align-items:flex-end;gap:12px}.title h1{margin:0;font-size:20px;letter-spacing:-.02em}.subtitle{font-size:12px;color:var(--muted);margin-top:2px}
+    .status{font-size:11px;font-weight:800;border-radius:999px;padding:5px 8px;background:var(--green-soft);color:var(--green);white-space:nowrap}
+    .tabs{display:flex;gap:6px;margin-top:9px;overflow:auto;padding-bottom:1px}.tabbtn{border:1px solid var(--line);background:#fff;color:var(--blue);padding:6px 10px;border-radius:8px;font-weight:800;cursor:pointer;white-space:nowrap}.tabbtn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+    main{max-width:1500px;margin:auto;padding:12px 14px 26px}.tab{display:none}.tab.active{display:block}.note{background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 11px;color:var(--muted);margin-bottom:10px}.note b{color:var(--ink)}
+    .numbers{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin-bottom:12px}.number{background:#fff;border:1px solid var(--line);border-radius:11px;padding:10px;text-align:center;box-shadow:var(--shadow)}.number b{display:block;color:var(--amber);font-size:19px}.number span{font-size:11px;color:var(--muted)}
+    .section-title{margin:14px 0 8px;font-size:16px;display:flex;align-items:baseline;gap:8px}.section-title span{font-size:11px;font-weight:500;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;align-items:start}.grid4{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:10px 11px;box-shadow:var(--shadow)}.card h3{margin:0 0 6px;font-size:14px;color:var(--blue)}.card ul{margin:0;padding-left:18px}.card li{margin:0 0 4px}.card li:last-child{margin-bottom:0}
+    .key{margin-top:7px;padding:6px 8px;border-radius:7px;background:var(--blue-soft);font-weight:700}.key.purple{background:var(--purple-soft)}.key.green{background:var(--green-soft)}.key.amber{background:var(--amber-soft)}.key.red{background:var(--red-soft)}
+    .pillrow{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px}.pill{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;background:#fff;padding:5px 8px;font-size:12px;font-weight:750}.pill.green{background:var(--green-soft);border-color:#cfe9dc}.pill.amber{background:var(--amber-soft);border-color:#ecdfb8}.pill.red{background:var(--red-soft);border-color:#efd1d1}
+    .rolemap{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:8px;align-items:stretch}.role{border-radius:12px;padding:13px;border:1px solid var(--line);background:#fff}.role b{display:block;font-size:17px;margin-bottom:3px}.role small{color:var(--muted)}.role.sell{border-top:4px solid var(--blue)}.role.build{border-top:4px solid var(--green)}.role.bridge{border-top:4px solid var(--purple)}.arrow{display:grid;place-items:center;font-size:25px;color:#8a98a6}
+    .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.step{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px}.step .k{font-size:11px;color:var(--muted);text-transform:uppercase;font-weight:800;letter-spacing:.04em}.step b{display:block;margin-top:3px}
+    .ask h3{color:var(--purple)}
+    .flashgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.flash{min-height:175px;perspective:900px;cursor:pointer}.flash-inner{position:relative;width:100%;height:100%;min-height:175px;transition:transform .45s;transform-style:preserve-3d}.flash.flipped .flash-inner{transform:rotateY(180deg)}.face{position:absolute;inset:0;backface-visibility:hidden;border:1px solid var(--line);border-radius:13px;padding:14px;background:#fff;box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:center}.back{transform:rotateY(180deg);background:var(--blue-soft)}.front .symbol{font-size:31px;margin-bottom:8px}.front b{font-size:17px}.face small{color:var(--muted);margin-top:5px}.back h3{margin:0 0 7px;color:var(--blue);font-size:14px}.back ul{padding-left:18px;margin:0}.back li{margin-bottom:4px}.flip-hint{font-size:11px;color:var(--muted);margin-top:9px}
+    .testbox{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:12px}.prompt,.feedback{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;box-shadow:var(--shadow)}.qnum{color:var(--muted);font-size:11px;font-weight:800;text-transform:uppercase}.question{font-size:20px;font-weight:850;letter-spacing:-.02em;margin:4px 0 10px}.prompt textarea{width:100%;min-height:180px;resize:vertical;border:1px solid var(--line);border-radius:9px;padding:10px;outline:none;background:#fbfcfd}.prompt textarea:focus{border-color:#8fb0cf;box-shadow:0 0 0 3px #e7f0f8}.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}.btn{border:1px solid var(--line);background:#fff;border-radius:8px;padding:7px 10px;font-weight:800;cursor:pointer}.btn.primary{background:var(--blue);color:#fff;border-color:var(--blue)}.btn.secondary{color:var(--purple)}.wordcount{margin-left:auto;color:var(--muted);font-size:11px;align-self:center}.feedback h3{margin:0 0 7px;font-size:14px;color:var(--purple)}.feedback ul{margin:0;padding-left:18px}.anchor-results{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}.anchor-chip{padding:5px 7px;border-radius:999px;font-size:11px;font-weight:800;border:1px solid var(--line);background:#fff}.anchor-chip.hit{background:var(--green-soft);color:var(--green);border-color:#cfe8dc}.anchor-chip.miss{background:var(--amber-soft);color:var(--amber);border-color:#eadcaf}.scoreline{margin-top:10px;padding:8px;border-radius:8px;background:#f7f9fb;color:var(--muted);font-size:12px}
+    .callout{border-left:4px solid var(--red);background:var(--red-soft);padding:9px 11px;border-radius:0 9px 9px 0;margin-top:9px}.callout strong{color:#712e2e}
+    footer{margin-top:14px;padding:10px;color:var(--muted);font-size:11px;text-align:center}
+    @media(max-width:1100px){.numbers{grid-template-columns:repeat(3,1fr)}.grid,.grid4{grid-template-columns:repeat(2,1fr)}.flashgrid{grid-template-columns:repeat(2,1fr)}.testbox{grid-template-columns:1fr}}
+    @media(max-width:700px){header{position:static}.headrow{align-items:flex-start}.numbers{grid-template-columns:repeat(2,1fr)}.grid,.grid4,.flashgrid,.timeline{grid-template-columns:1fr}.rolemap{grid-template-columns:1fr}.arrow{transform:rotate(90deg)}main{padding:10px}.question{font-size:18px}}
+    @media print{header{position:static}.tabs{display:none}.tab{display:block!important;margin-bottom:18px}.flashgrid,.grid,.grid4{grid-template-columns:repeat(2,1fr)}.testbox{display:none}.card,.number,.face{box-shadow:none}}
   </style>
 </head>
 <body>
 <header>
-  <div>
-    <h1>Surikat — Malin / Navigio Interview Cheat Sheet</h1>
-    <div class="subtitle">Glance at the bold anchors → use the arrows to build a natural answer. Do not memorise scripts.</div>
+  <div class="headrow">
+    <div class="title"><h1>Surikat — Interview Prep</h1><div class="subtitle">Post-screen update • Erik Brechter / Navigio • 17 Aug 2026 • visual anchors, not scripts</div></div>
+    <div class="status">SCREEN PASSED → PREP NEXT ROUND</div>
   </div>
-  <nav class="nav">
-    <a href="#her-questions">Her likely questions</a>
-    <a href="#your-questions">Questions for Malin</a>
+  <nav class="tabs" aria-label="Prep sections">
+    <button class="tabbtn active" data-tab="latest">Latest: Erik screen</button>
+    <button class="tabbtn" data-tab="qa">Interview Q&amp;A</button>
+    <button class="tabbtn" data-tab="cards">Visual memory cards</button>
+    <button class="tabbtn" data-tab="test">Test yourself</button>
+    <button class="tabbtn" data-tab="questions">Questions for Surikat</button>
   </nav>
 </header>
-
 <main>
-  <div class="legend"><strong>How to use:</strong> lead with the <strong>bold point</strong> → follow the arrow flow → stop when the answer is complete. Let Malin pull more detail from you.</div>
+  <section id="latest" class="tab active">
+    <div class="note"><b>Use this first.</b> Erik's screen clarified the real job: Surikat has a proven product and profitable business, but effectively <b>no established sales organisation</b>. They now need someone to sell personally while creating the commercial engine around that activity.</div>
 
-  <div class="numbers" aria-label="Key numbers">
-    <div class="number"><b>€50k</b><span>typical annual contract</span></div>
-    <div class="number"><b>€150k</b><span>typical 3-year initial value</span></div>
-    <div class="number"><b>320%</b><span>more qualified opportunities / meetings</span></div>
-    <div class="number"><b>6 weeks</b><span>Q1 target achieved</span></div>
-    <div class="number"><b>6 months</b><span>annual platform target achieved</span></div>
-    <div class="number"><b>~2x</b><span>Padani turnover, year one</span></div>
-  </div>
+    <div class="numbers">
+      <div class="number"><b>~SEK 100m</b><span>current revenue</span></div>
+      <div class="number"><b>~30 yrs</b><span>organic growth history</span></div>
+      <div class="number"><b>2024</b><span>Bridgepoint investment</span></div>
+      <div class="number"><b>3×</b><span>revenue ambition</span></div>
+      <div class="number"><b>~0</b><span>formal sales organisation today</span></div>
+      <div class="number"><b>CEO</b><span>direct report: Andreas</span></div>
+    </div>
 
-  <section id="her-questions">
-    <h2 class="section-title">Likely questions from Malin <span>Navigio screening you against Surikat's brief</span></h2>
+    <h2 class="section-title">The role in one picture <span>Erik explicitly divided it into three parts</span></h2>
+    <div class="rolemap">
+      <div class="role sell"><b>1. SELL</b><small>Own sales strategy • personally drive complex sales with large customers • stay operational.</small><div class="key">Your proof: full-cycle international B2B + Precisely outbound build.</div></div>
+      <div class="arrow">→</div>
+      <div class="role build"><b>2. BUILD</b><small>Define structure • methodology • KPIs • reporting • recruit and develop the future team.</small><div class="key green">Your proof: Padani team build + process work + hands-on coaching.</div></div>
+      <div class="arrow">→</div>
+      <div class="role bridge"><b>3. BRIDGE</b><small>Connect CEO Andreas, board and Bridgepoint around the commercial direction of the company.</small><div class="key purple">Your proof: CEO / acquisition / senior stakeholder perspective.</div></div>
+    </div>
+
+    <h2 class="section-title">What changed after the screen <span>replace assumptions with confirmed facts</span></h2>
     <div class="grid">
+      <article class="card"><h3>Why the role exists</h3><ul><li><strong>Historically inbound-led</strong> → Surikat grew without a real sales department.</li><li><strong>Bridgepoint growth journey</strong> → ambition is now far larger than the old commercial model supports.</li><li><strong>Greenfield build</strong> → Erik: there is essentially “nothing to inherit” in sales organisation terms.</li></ul><div class="key">This is not fixing a broken product. It is building a growth engine around a proven one.</div></article>
+      <article class="card"><h3>Why this is unusually attractive</h3><ul><li><strong>Product risk is lower</strong> → well-tested software already used by large, demanding customers.</li><li><strong>Commercial whitespace is high</strong> → process, team and outbound approach still to be built.</li><li><strong>Executive access</strong> → direct CEO report + board / investor interface.</li></ul><div class="key green">Greenfield commercial build + established product = the sweet spot.</div></article>
+      <article class="card"><h3>What Erik reacted well to</h3><ul><li><strong>Hands-on preference</strong> → you repeatedly said you want to sell, not just manage.</li><li><strong>Precisely parallel</strong> → inbound-led tech business → you helped create proactive outbound.</li><li><strong>ArrivalGuides story</strong> → CEO mandate was purposeful, but frontline international sales is your long-term direction.</li></ul><div class="key">Keep the same story. Tighten it; do not reinvent it.</div></article>
+      <article class="card"><h3>The one answer to strengthen</h3><ul><li><strong>Precisely was not your team</strong> → Erik probed whether you had people below you.</li><li><strong>Do not stretch that example</strong> → use Precisely for outbound/process proof only.</li><li><strong>Use Padani + Theo Fennell</strong> for team-build / leadership proof, then CEO experience for senior leadership.</li></ul><div class="key red">Next round: separate SELL proof from LEAD proof cleanly.</div></article>
+      <article class="card"><h3>Commercial operating model — watchpoint</h3><ul><li>Erik explicitly mentioned <strong>KPIs + reporting</strong>.</li><li>That can mean sensible commercial discipline — or a heavy pipeline-management culture.</li><li>Your best position: <strong>evidence-based forecasting, minimal bureaucracy, customer work first</strong>.</li></ul><div class="key amber">Probe how Bridgepoint and the board expect sales to be measured.</div></article>
+      <article class="card"><h3>Process / practicals</h3><ul><li><strong>Erik will send more material</strong> about the company and role.</li><li><strong>CV:</strong> already available via Malin / Navigio.</li><li><strong>Start date:</strong> no fixed date; active search and flexible for the right person.</li><li><strong>Your notice:</strong> 3 months formally, likely flexible.</li><li><strong>Current comp shared:</strong> ~SEK 70k/month base + perks + commission.</li></ul></article>
+    </div>
 
-      <article class="card">
-        <h3>1. Tell me about yourself</h3>
-        <ul>
-          <li><strong>International commercial career</strong> → premium brands / distribution → moved into <strong>B2B technology ~10 years ago</strong> → ArrivalGuides international sales.</li>
-          <li><strong>Full-cycle sales</strong> → target account → prospect → discovery → demo → proposal → negotiation → contract → signature.</li>
-          <li><strong>CEO = specific turnaround / sale mandate</strong> → Smartvel acquisition → now <strong>~80% hands-on new business</strong> → next move = permanent sell + build role.</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>2. Why leave a CEO role?</h3>
-        <ul>
-          <li><strong>CEO was a mandate, not my career direction</strong> → stabilise ArrivalGuides post-Covid → restore commercial focus → prepare for acquisition → Smartvel sale completed the job.</li>
-          <li><strong>Since acquisition: ~80% Smartvel new business</strong> → ~20% ArrivalGuides oversight / transition.</li>
-          <li><strong>Not stepping down</strong> → deliberately moving full-time toward the commercial work I enjoy: customers → opportunities → growth.</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>3. Why Surikat?</h3>
-        <ul>
-          <li><strong>Proven, profitable international business</strong> → ~SEK 100m revenue → ~35 countries → mission-critical software.</li>
-          <li><strong>Bridgepoint-backed growth phase</strong> → business already works → next step appears to be a <strong>more scalable / repeatable commercial engine</strong>.</li>
-          <li><strong>Role = sell + build</strong> → own pipeline + close deals → build process → recruit / coach team → executive influence.</li>
-        </ul>
-        <div class="key">Anchor: <strong>strong product → proven market → ambitious growth → build the engine while selling.</strong></div>
-      </article>
-
-      <article class="card">
-        <h3>4. Why are you right for the role?</h3>
-        <ul>
-          <li><strong>International B2B new business</strong> → senior decision-makers → consultative selling → longer-term commercial relationships.</li>
-          <li><strong>€50k ARR / ~€150k initial value</strong> → personally progress opportunities from prospecting to signature.</li>
-          <li><strong>Build process + people</strong> → CRM / outbound improvements → Padani team build → Theo Fennell team leadership.</li>
-        </ul>
-        <div class="key"><strong>Sell personally → improve the process → develop people → operate internationally.</strong></div>
-      </article>
-
-      <article class="card">
-        <h3>5. What size deals have you handled?</h3>
-        <ul>
-          <li><strong>~€50k per year</strong> → normally <strong>3 years</strong> → automatic renewal → <strong>~€150k initial contract value</strong>.</li>
-          <li><strong>Consultative B2B sale</strong> → multiple conversations / stakeholders → proposal → commercial negotiation → contract.</li>
-          <li><strong>My ownership</strong> → originate + progress opportunity → involve product / delivery expertise where needed → remain commercially responsible through signature.</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>6. Walk me through your sales process</h3>
-        <ul>
-          <li><strong>Target → stakeholder → outreach</strong> → identify best-fit company → find real decision-maker → research before approaching.</li>
-          <li><strong>Discovery → demo</strong> → understand problem / priorities / decision process → connect product to their specific requirement.</li>
-          <li><strong>Proposal → negotiation → contract → signature</strong> → objections / procurement / legal → clean handover → retain commercial relationship where useful.</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>7. How do you generate pipeline?</h3>
-        <ul>
-          <li><strong>Define targets → research → personalised outreach</strong> → identify real decision-makers rather than generic volume activity.</li>
-          <li><strong>Qualify properly</strong> → genuine problem / opportunity → don't confuse meetings with pipeline.</li>
-          <li><strong>CRM discipline</strong> → clear stage → next action → follow-up date → move it or remove it.</li>
-          <li><strong>Proof: +320%</strong> qualified opportunities / scheduled meetings after personalised CRM outreach.</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>8. What results can you point to?</h3>
-        <ul>
-          <li><strong>Deal economics</strong> → ~€50k ARR → ~€150k typical initial 3-year contract.</li>
-          <li><strong>Pipeline</strong> → personalised outbound → <strong>+320%</strong> qualified opportunities / meetings.</li>
-          <li><strong>Targets</strong> → Q1 target in <strong>6 weeks</strong> → new platform annual target in <strong>6 months</strong>.</li>
-          <li><strong>Team-led growth</strong> → Padani turnover nearly doubled in year one → invited to become partner.</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>9. Have you built sales teams?</h3>
-        <ul>
-          <li><strong>Padani = build + train</strong> → recruit / develop small team → personally train → establish approach / standards → work alongside them.</li>
-          <li><strong>Result</strong> → team central to growth → turnover nearly doubled in year one → <strong>partnership offer</strong>.</li>
-          <li><strong>Theo Fennell = lead experienced team</strong> → direction → standards → motivation → performance rather than teaching fundamentals.</li>
-        </ul>
-        <div class="key"><strong>Padani = build/develop. Theo Fennell = lead experienced people.</strong></div>
-      </article>
-
-      <article class="card">
-        <h3>10. What is your leadership style?</h3>
-        <ul>
-          <li><strong>Clear expectations</strong> → people know what good looks like → understand why it matters → know what they own.</li>
-          <li><strong>Hands-on coaching</strong> → work through real customers / opportunities → help solve problems → don't manage only through reports.</li>
-          <li><strong>Responsibility + accountability</strong> → give room to perform → stay available → challenge where needed → recognise team success.</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>11. What does “player-coach” mean to you?</h3>
-        <ul>
-          <li><strong>Carry my own pipeline</strong> → prospect → customer meetings → negotiate → close important business personally.</li>
-          <li><strong>Lead through behaviour</strong> → team sees how I qualify / sell / follow up → not just telling others what to do.</li>
-          <li><strong>Make it repeatable</strong> → identify what works → process / standards → coach + recruit others → scale capability.</li>
-        </ul>
-        <div class="key"><strong>Do it → prove it → teach it → scale it.</strong></div>
-      </article>
-
-      <article class="card">
-        <h3>12. Have you built commercial processes?</h3>
-        <ul>
-          <li><strong>ArrivalGuides / Lonely Planet</strong> → CRM structure → data quality → segmentation → pipeline visibility → disciplined follow-up.</li>
-          <li><strong>Personalised outbound</strong> → reactive / passive → proactive target-account approach → <strong>+320%</strong> opportunities / meetings.</li>
-          <li><strong>Precisely</strong> → inbound-led business → global outbound programme → accounts → decision-makers → campaign testing → sales / marketing alignment.</li>
-        </ul>
-        <div class="key"><strong>Informal / reactive → structured / proactive → repeatable.</strong></div>
-      </article>
-
-      <article class="card">
-        <h3>13. Forecasting / pipeline management?</h3>
-        <ul>
-          <li><strong>Opportunity = evidence</strong> → real need + stakeholder + next step → otherwise activity, not forecastable pipeline.</li>
-          <li><strong>CRM</strong> → correct stage → realistic probability → next action / date → understand decision process.</li>
-          <li><strong>Forecast without wishful thinking</strong> → challenge stalled deals → distinguish “likes us” from “actually buying”.</li>
-          <li><strong>Honest context</strong> → previous firms less formal than large SaaS → comfortable with / welcome stronger discipline.</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>14. Comfortable with long sales cycles?</h3>
-        <ul>
-          <li><strong>Yes — international consultative B2B</strong> → multiple stakeholders → budget → procurement → legal → internal approval.</li>
-          <li><strong>Maintain momentum</strong> → understand next decision → agree next step → follow up without irritating customer.</li>
-          <li><strong>Enough qualified pipeline</strong> → don't become emotionally dependent on one large opportunity.</li>
-        </ul>
-        <div class="key"><strong>Patient with timing → impatient about unclear next steps.</strong></div>
-      </article>
-
-      <article class="card">
-        <h3>15. You don't have maritime experience</h3>
-        <ul>
-          <li><strong>Correct — no direct port / terminal software</strong> → say it plainly → don't pretend domain expertise.</li>
-          <li><strong>Repeated pattern of learning new sectors</strong> → premium / distribution → travel tech → legal SaaS → other B2B tech.</li>
-          <li><strong>My method</strong> → learn product + customer operation → identify commercial problem → simplify complexity → communicate value.</li>
-          <li><strong>At Surikat</strong> → learn workflows quickly → use internal specialists for technical depth → never bluff.</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>16. How international is your experience?</h3>
-        <ul>
-          <li><strong>International has been the normal environment</strong> → UK + Sweden base → customers / distributors / partners across markets.</li>
-          <li><strong>ArrivalGuides / Smartvel</strong> → international B2B customers → senior stakeholders in different countries → remote + face-to-face work.</li>
-          <li><strong>Earlier career</strong> → brands / wholesale / distributors / retailers → different cultures and business practices.</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>17. How technical are you?</h3>
-        <ul>
-          <li><strong>Not an engineer — never pretend to be</strong> → learn enough product depth to understand what the system does and why it matters.</li>
-          <li><strong>Customer workflow / problem first</strong> → translate functionality into operational / commercial value.</li>
-          <li><strong>Bring specialists when needed</strong> → product / engineering for depth → I remain responsible for the commercial conversation.</li>
-        </ul>
-        <div class="key"><strong>Understand enough to sell credibly → never bluff expertise.</strong></div>
-      </article>
-
-      <article class="card">
-        <h3>18. How do you sell to senior decision-makers?</h3>
-        <ul>
-          <li><strong>Prepare</strong> → understand company / market / probable issue before the meeting.</li>
-          <li><strong>Discover before presenting</strong> → priority → economics → stakeholders → decision process.</li>
-          <li><strong>Business impact, not feature dump</strong> → connect solution to strategic / operational value.</li>
-          <li><strong>Clear follow-up</strong> → summarise what matters → confirm next action → respect their time.</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>19. How do you negotiate?</h3>
-        <ul>
-          <li><strong>Understand value first</strong> → customer need → alternatives → urgency → full commercial scope.</li>
-          <li><strong>Don't discount too early</strong> → identify whether objection is price / risk / timing / scope / approval.</li>
-          <li><strong>Negotiate the whole package</strong> → price + term + scope + timing + commitment → trade rather than concede.</li>
-          <li><strong>Stay through signature</strong> → proposal → negotiation → contract → close.</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>20. What motivates you?</h3>
-        <ul>
-          <li><strong>Create opportunities</strong> → open a customer → progress it → win meaningful business.</li>
-          <li><strong>Learn</strong> → understand new product / market → turn complexity into simple commercial value.</li>
-          <li><strong>Build</strong> → improve weak / informal processes → develop people → leave commercial organisation stronger.</li>
-          <li><strong>Surikat fit</strong> → sell + build + learn + visible impact.</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>21. What are you looking for next?</h3>
-        <ul>
-          <li><strong>Permanent commercial mandate</strong> → not another temporary turnaround / CEO assignment.</li>
-          <li><strong>Strong product + international scope</strong> → room to grow → genuine customer value.</li>
-          <li><strong>Personally sell + broader impact</strong> → create pipeline / close business → also improve process / team / structure.</li>
-        </ul>
-        <div class="key"><strong>Mandate and ability to make a difference &gt; title.</strong></div>
-      </article>
-
-      <article class="card">
-        <h3>22. Biggest gap for this role?</h3>
-        <ul>
-          <li><strong>No direct maritime / ports domain</strong> → genuine initial learning curve → acknowledge it rather than hide it.</li>
-          <li><strong>Previous SaaS environments less formally metric-driven</strong> than a large enterprise sales machine.</li>
-          <li><strong>Counterbalance</strong> → full-cycle ownership + international selling + team leadership + process building + repeated sector learning.</li>
-          <li><strong>Approach</strong> → learn fast → use specialists intelligently → don't make excuses.</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>23. Why you over a maritime candidate?</h3>
-        <ul>
-          <li><strong>Respect the sector advantage</strong> → a maritime candidate may have faster domain fluency on day one.</li>
-          <li><strong>My difference</strong> → international full-cycle selling + commercial process building + team development + leadership / turnaround perspective.</li>
-          <li><strong>Proven adaptability</strong> → enter new industries → learn proposition → develop market → turn opportunities into revenue.</li>
-          <li><strong>Position it as complementary</strong> → bring external commercial ideas while learning from Surikat's internal domain experts.</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>24. What happened at ArrivalGuides?</h3>
-        <ul>
-          <li><strong>Problem</strong> → Covid damaged business → owners asked me in 2022 to stabilise it.</li>
-          <li><strong>Mandate</strong> → restore commercial focus → remove weak / non-performing areas → prepare due diligence → secure strategic future.</li>
-          <li><strong>Outcome</strong> → Smartvel agreement 2023 → acquisition completed 2024 → mandate achieved → support transition.</li>
-        </ul>
-        <div class="key"><strong>Problem → mandate → action → sale → transition.</strong></div>
-      </article>
-
-      <article class="card">
-        <h3>25. What do you actually do at Smartvel now?</h3>
-        <ul>
-          <li><strong>~80% hands-on international new business</strong> → target accounts → outreach → discovery / meetings → demos → proposals → negotiation → follow-up → progression to signature.</li>
-          <li><strong>~20% ArrivalGuides oversight</strong> → transition / continuity because it remains a separate legal entity.</li>
-          <li><strong>Key point</strong> → CEO title has not removed me from frontline selling.</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>26. Salary expectations?</h3>
-        <ul>
-          <li><strong>Understand package first</strong> → base → variable → targets → benefits → co-investment / equity structure.</li>
-          <li><strong>Don't anchor too early</strong> → expect a market-appropriate senior commercial package → open to structure.</li>
-          <li><strong>If pressed</strong> → ask: “What approved range is Surikat working with?”</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>27. Availability / you're away next week?</h3>
-        <ul>
-          <li><strong>Interested and available</strong> → away / road trip next week → can make time for calls → flexible around exact timing.</li>
-          <li><strong>Remove friction</strong> → travel does not prevent process moving if Surikat wants to move quickly.</li>
-        </ul>
-      </article>
-
+    <h2 class="section-title">Your next-round story <span>five pictures to keep in your head</span></h2>
+    <div class="timeline">
+      <div class="step"><div class="k">1 • Product</div><b>PROVEN</b><span>Not a speculative startup proposition.</span></div>
+      <div class="step"><div class="k">2 • Commercial state</div><b>INBOUND → OUTBOUND</b><span>Create proactive, repeatable growth.</span></div>
+      <div class="step"><div class="k">3 • You</div><b>PLAYER → COACH</b><span>Sell first; codify; hire; develop.</span></div>
+      <div class="step"><div class="k">4 • Destination</div><b>3× REVENUE</b><span>Commercial engine must scale with ambition.</span></div>
     </div>
   </section>
 
-  <section id="your-questions">
-    <h2 class="section-title">Questions for Malin <span>Use these to uncover Surikat's real brief — not just the advert</span></h2>
+  <section id="qa" class="tab">
+    <div class="note"><b>Answer shape:</b> lead with the bold anchor → give one proof point → stop. Let them pull detail. The next round is likely to test whether you can <b>build and lead</b>, not whether you can talk about sales.</div>
     <div class="grid">
-
-      <article class="card ask-card">
-        <h3>1. Why is Surikat hiring now?</h3>
-        <ul>
-          <li><strong>Role trigger</strong> → new role or replacement? → what changed? → why is current commercial structure no longer enough?</li>
-          <li><strong>Bridgepoint / growth plan</strong> → new growth targets? → geography? → reporting / forecasting? → scale?</li>
-        </ul>
-        <div class="key">Listen for the <strong>business problem behind the job advert</strong>.</div>
-      </article>
-
-      <article class="card ask-card">
-        <h3>2. What has Surikat asked Navigio to find?</h3>
-        <ul>
-          <li><strong>Top 3 non-negotiables</strong> → ideal experience → leadership level → required sales background.</li>
-          <li><strong>Must-have vs nice-to-have</strong> → where can they compromise? → maritime mandatory / preferred? → player-coach genuinely essential?</li>
-        </ul>
-      </article>
-
-      <article class="card ask-card">
-        <h3>3. What problem must this person solve?</h3>
-        <ul>
-          <li><strong>New business</strong> → pipeline? → conversion? → new logos? → dependency on existing accounts?</li>
-          <li><strong>Commercial structure</strong> → qualification? → forecasting? → CRM? → pricing? → negotiation?</li>
-          <li><strong>Organisation</strong> → CEO / founders doing too much selling? → team needs building or leading?</li>
-        </ul>
-      </article>
-
-      <article class="card ask-card">
-        <h3>4. Is this professionalising sales after Bridgepoint?</h3>
-        <ul>
-          <li><strong>Test the hypothesis</strong> → business already sells successfully → next growth phase needs a more repeatable / scalable commercial model?</li>
-          <li><strong>If yes</strong> → what works today? → what specifically needs changing? → pipeline / pricing / forecasting / process / team?</li>
-        </ul>
-        <div class="key">Suggested wording: <strong>“Is that broadly how Surikat has described the need to you?”</strong></div>
-      </article>
-
-      <article class="card ask-card">
-        <h3>5. What does “player-coach” really mean?</h3>
-        <ul>
-          <li><strong>Personal selling</strong> → own quota / pipeline? → expected share of new revenue?</li>
-          <li><strong>Management</strong> → current team? → immediate reports? → first hires? → expected team size?</li>
-          <li><strong>Evolution</strong> → year one mostly seller / builder? → when does leadership outweigh direct selling?</li>
-        </ul>
-      </article>
-
-      <article class="card ask-card">
-        <h3>6. What commercial organisation exists today?</h3>
-        <ul>
-          <li><strong>People</strong> → who sells today? → CEO / founders / dedicated salespeople / account managers?</li>
-          <li><strong>Infrastructure</strong> → CRM → marketing → sales ops → customer success → product support.</li>
-          <li><strong>Pipeline</strong> → opportunities already there or generate from zero?</li>
-        </ul>
-        <div class="key"><strong>What am I inheriting → what am I expected to create?</strong></div>
-      </article>
-
-      <article class="card ask-card">
-        <h3>7. What does success look like after 12 months?</h3>
-        <ul>
-          <li><strong>Revenue / new logos / ARR</strong> → what commercial outcome matters most?</li>
-          <li><strong>Pipeline + process</strong> → coverage / quality / forecasting / CRM discipline?</li>
-          <li><strong>Organisation / markets</strong> → hires? → new geography? → new segment?</li>
-        </ul>
-        <div class="key">Ask: <strong>“What would make Surikat say after one year: this hire has worked?”</strong></div>
-      </article>
-
-      <article class="card ask-card">
-        <h3>8. What do typical Surikat deals look like?</h3>
-        <ul>
-          <li><strong>Economics</strong> → ARR / contract value → term → implementation revenue.</li>
-          <li><strong>Sales motion</strong> → average cycle → buyer → stakeholders → procurement / technical evaluation.</li>
-          <li><strong>Mix</strong> → new logo vs existing-customer expansion.</li>
-        </ul>
-        <div class="key">Benchmark mentally against <strong>€50k ARR / €150k 3-year value</strong>.</div>
-      </article>
-
-      <article class="card ask-card">
-        <h3>9. How involved are CEO / founders in sales?</h3>
-        <ul>
-          <li><strong>Key relationships</strong> → who owns them today? → who prices / negotiates / closes major deals?</li>
-          <li><strong>Transition</strong> → is Sales Lead expected to take commercial knowledge / relationships out of founders' heads and make it repeatable?</li>
-        </ul>
-      </article>
-
-      <article class="card ask-card">
-        <h3>10. How much authority comes with the role?</h3>
-        <ul>
-          <li><strong>Hiring</strong> → own team / headcount / selection?</li>
-          <li><strong>Commercial</strong> → pricing / discount authority → territories → qualification → methodology → CRM?</li>
-          <li><strong>Strategic</strong> → real executive-team voice → GTM → positioning → product feedback?</li>
-        </ul>
-        <div class="key">Distinguish <strong>genuine mandate</strong> from responsibility without authority.</div>
-      </article>
-
-      <article class="card ask-card">
-        <h3>11. What does Bridgepoint expect?</h3>
-        <ul>
-          <li><strong>Growth</strong> → revenue ambition → time horizon → priority markets.</li>
-          <li><strong>Governance</strong> → KPIs → forecasting → board reporting → investor involvement.</li>
-          <li><strong>Resources</strong> → willing to fund sales hires / marketing / systems ahead of growth?</li>
-        </ul>
-      </article>
-
-      <article class="card ask-card">
-        <h3>12. What made my background interesting to you?</h3>
-        <ul>
-          <li><strong>Ask directly</strong> → what matched Surikat's brief?</li>
-          <li><strong>Listen for her selling points</strong> → hands-on sales? → CEO turnaround? → team building? → international experience?</li>
-          <li><strong>Then reinforce those strengths</strong> naturally during the rest of the conversation.</li>
-        </ul>
-      </article>
-
-      <article class="card ask-card">
-        <h3>13. Where might Surikat question me?</h3>
-        <ul>
-          <li><strong>Ask openly</strong> → “Against their brief, where do you think they may have reservations?”</li>
-          <li><strong>Possible areas</strong> → maritime → CEO title → formal SaaS metrics → team scale → technical depth.</li>
-          <li><strong>First listen — don't defend</strong> → then answer with evidence → give Malin material she can use when presenting you.</li>
-        </ul>
-      </article>
-
-      <article class="card ask-card">
-        <h3>14. How do you see my fit after speaking?</h3>
-        <ul>
-          <li><strong>Ask at the end</strong> → “Based on what you've heard, how do you see me against the brief?”</li>
-          <li><strong>If positive</strong> → next step? → anything to clarify before she presents you?</li>
-          <li><strong>If hesitant</strong> → what specifically would she need to feel comfortable putting you forward?</li>
-        </ul>
-      </article>
-
+      <article class="card"><h3>1. Tell me about yourself</h3><ul><li><strong>International commercial career</strong> → premium / distribution → B2B technology → international new business.</li><li><strong>Full-cycle operator</strong> → target → outreach → discovery → demo → proposal → negotiation → signature.</li><li><strong>Leadership added over time</strong> → team building + CEO / acquisition mandate, but still happiest close to customers and revenue.</li></ul><div class="key">Commercial builder who still sells.</div></article>
+      <article class="card"><h3>2. Why Surikat now?</h3><ul><li><strong>Proven product</strong> + profitable business.</li><li><strong>Commercial whitespace</strong> → no mature sales organisation; historically inbound-led.</li><li><strong>Real mandate</strong> → sell personally + build process/team + work directly with CEO, board and Bridgepoint.</li></ul><div class="key">Strong product → blank commercial canvas → ambitious growth.</div></article>
+      <article class="card"><h3>3. Why leave a CEO role?</h3><ul><li><strong>CEO was a mandate</strong> → stabilise ArrivalGuides after Covid → restore value → prepare / complete strategic sale.</li><li><strong>Not my desired permanent direction</strong> → whole-business administration is less motivating than commercial creation.</li><li><strong>Next move deliberately returns to sell + build</strong>, with leadership scope but customer contact retained.</li></ul></article>
+      <article class="card"><h3>4. Have you really built a sales organisation?</h3><ul><li><strong>Do not overclaim Precisely</strong> → that proves outbound / process creation, not people leadership.</li><li><strong>Padani</strong> → recruited / developed a small team, set standards, worked alongside them; turnover nearly doubled in year one.</li><li><strong>Theo Fennell</strong> → led an experienced team; direction, standards, performance.</li><li><strong>CEO experience</strong> → adds senior commercial judgement and organisational context.</li></ul><div class="key red">Separate the evidence: Precisely = PROCESS. Padani / Theo = PEOPLE.</div></article>
+      <article class="card"><h3>5. What does player-coach mean to you?</h3><ul><li><strong>Carry important opportunities personally.</strong></li><li><strong>Turn what works into a repeatable method.</strong></li><li><strong>Recruit and coach through real deals</strong>, not just dashboards.</li><li><strong>Gradually shift the mix</strong> as the team gains capability.</li></ul><div class="key">Do it → prove it → teach it → scale it.</div></article>
+      <article class="card"><h3>6. What would you do in the first 90 days?</h3><ul><li><strong>Learn</strong> → product, customer workflows, current accounts, why inbound converts, lost deals, market priorities.</li><li><strong>Map</strong> → ICP / segments / buyers / sales cycle / current pipeline / pricing / decision process.</li><li><strong>Start selling early</strong> → do not spend a quarter designing slides and process.</li><li><strong>Build only what the evidence requires</strong> → stages, qualification, CRM hygiene, core KPIs, first hiring profile.</li></ul></article>
+      <article class="card"><h3>7. How would you turn inbound strength into outbound growth?</h3><ul><li><strong>Reverse-engineer best customers</strong> → why did they buy, which triggers, which roles, which problems?</li><li><strong>Build target-account hypotheses</strong> rather than mass activity.</li><li><strong>Personalised outreach + events / trade ecosystem</strong> → open doors with relevance.</li><li><strong>Measure conversion quality</strong>, not email volume.</li></ul><div class="key green">Use inbound success as data for outbound targeting.</div></article>
+      <article class="card"><h3>8. How do you set KPIs without creating bureaucracy?</h3><ul><li><strong>KPIs must change behaviour or improve decisions.</strong></li><li><strong>Leading:</strong> qualified pipeline created, right stakeholder engaged, next-step discipline.</li><li><strong>Lagging:</strong> win rate, cycle length, new revenue / ARR, expansion.</li><li><strong>Avoid vanity metrics</strong> that reward activity without commercial progress.</li></ul><div class="key amber">Measure the customer journey, not salesperson busyness.</div></article>
+      <article class="card"><h3>9. How do you forecast?</h3><ul><li><strong>Forecast = evidence</strong>, not seller optimism.</li><li>Real problem + decision-maker + budget / path + agreed next step + decision timing.</li><li><strong>Stalled = challenged</strong>; “likes us” is not the same as “buying”.</li><li>Keep process light enough that salespeople maintain it accurately.</li></ul></article>
+      <article class="card"><h3>10. Complex / long-cycle deals?</h3><ul><li><strong>Comfortable with multiple stakeholders</strong> → commercial, user, technical, procurement, legal.</li><li><strong>Maintain momentum</strong> by making the next decision explicit.</li><li><strong>Protect leverage</strong> → do not discount before diagnosing the real objection.</li><li><strong>Keep enough pipeline</strong> not to become emotionally dependent on one big deal.</li></ul></article>
+      <article class="card"><h3>11. No maritime / terminal background?</h3><ul><li><strong>Correct — say it plainly.</strong></li><li><strong>Pattern of entering new sectors</strong> → travel tech, legal SaaS and other B2B environments.</li><li><strong>Learn the operation before pretending to know it</strong> → customer workflow → economic / operational problem → product value.</li><li>Use internal experts for technical depth; remain commercially accountable.</li></ul></article>
+      <article class="card"><h3>12. Why you over a sector specialist?</h3><ul><li><strong>They may have faster day-one domain fluency.</strong></li><li><strong>You bring the transformation Surikat actually needs</strong> → international new business + process creation + people development + leadership.</li><li><strong>Fresh commercial pattern recognition</strong> from several sectors can be useful when moving from inbound success to proactive scale.</li></ul></article>
+      <article class="card"><h3>13. How do you work with a PE-backed board?</h3><ul><li><strong>Translate commercial reality into decision-useful information.</strong></li><li>Be honest about pipeline quality, pace and constraints.</li><li><strong>Connect investment to growth logic</strong> → headcount / marketing / systems must have a reason.</li><li>Protect the sales team from reporting theatre while giving the board real visibility.</li></ul></article>
+      <article class="card"><h3>14. What motivates you?</h3><ul><li><strong>Create</strong> → new customers, new opportunities, new systems that work.</li><li><strong>Solve</strong> → take something informal and make it more effective.</li><li><strong>Learn</strong> → understand a new product / market deeply enough to sell it simply.</li><li>Surikat combines all three with visible impact.</li></ul></article>
+      <article class="card"><h3>15. Compensation / availability?</h3><ul><li><strong>Already disclosed:</strong> ~SEK 70k/month base + perks + commission.</li><li><strong>Notice:</strong> technically 3 months, but likely flexible with Smartvel.</li><li><strong>Do not renegotiate yourself downward</strong> in a future conversation; first understand Surikat's total package, variable structure and co-investment opportunity.</li></ul></article>
     </div>
   </section>
 
-  <div class="footer-note"><strong>Call objective:</strong> Malin does not need to conclude that you have done the exact maritime job before. She needs enough evidence to say: <strong>“Andrew can sell complex international B2B, build commercial structure, lead people and is credible enough to put in front of Surikat.”</strong></div>
+  <section id="cards" class="tab">
+    <div class="note"><b>Visual recall mode.</b> Say the answer out loud before flipping each card. The aim is to remember a picture / sequence, not exact wording.</div>
+    <div class="flashgrid">
+      <div class="flash"><div class="flash-inner"><div class="face front"><div class="symbol">📈</div><b>100 → 3×</b><small>What changed at Surikat?</small><div class="flip-hint">Tap to flip</div></div><div class="face back"><h3>Growth story</h3><ul><li>~SEK 100m revenue.</li><li>Profitable, ~30-year organic growth.</li><li>Bridgepoint invested in 2024.</li><li>Ambition: triple revenue.</li></ul></div></div></div>
+      <div class="flash"><div class="flash-inner"><div class="face front"><div class="symbol">🎯</div><b>SELL → BUILD → BRIDGE</b><small>The role in three words</small><div class="flip-hint">Tap to flip</div></div><div class="face back"><h3>Three-part mandate</h3><ul><li>SELL: strategy + major customers.</li><li>BUILD: process, KPIs, reporting, team.</li><li>BRIDGE: CEO, board, Bridgepoint.</li></ul></div></div></div>
+      <div class="flash"><div class="flash-inner"><div class="face front"><div class="symbol">🌱</div><b>INBOUND → ENGINE</b><small>Why the job exists</small><div class="flip-hint">Tap to flip</div></div><div class="face back"><h3>Commercial whitespace</h3><ul><li>Historically inbound-led.</li><li>Almost no formal sales organisation.</li><li>Need proactive, repeatable growth.</li><li>Nothing substantial to inherit.</li></ul></div></div></div>
+      <div class="flash"><div class="flash-inner"><div class="face front"><div class="symbol">🧭</div><b>PROVEN PRODUCT</b><small>Why this is different from startup selling</small><div class="flip-hint">Tap to flip</div></div><div class="face back"><h3>Lower product risk</h3><ul><li>Well-tested software.</li><li>Large demanding customers already use it.</li><li>Commercial build is greenfield; product is not.</li></ul></div></div></div>
+      <div class="flash"><div class="flash-inner"><div class="face front"><div class="symbol">⚙️</div><b>PRECISELY</b><small>Which proof does it provide?</small><div class="flip-hint">Tap to flip</div></div><div class="face back"><h3>PROCESS proof</h3><ul><li>Inbound-led tech context.</li><li>Create proactive outbound motion.</li><li>Full-cycle, hands-on selling.</li><li>Do NOT use it as team-leadership proof.</li></ul></div></div></div>
+      <div class="flash"><div class="flash-inner"><div class="face front"><div class="symbol">👥</div><b>PADANI + THEO</b><small>Which proof do they provide?</small><div class="flip-hint">Tap to flip</div></div><div class="face back"><h3>PEOPLE proof</h3><ul><li>Padani: recruit / develop / standards / nearly 2× turnover.</li><li>Theo Fennell: lead experienced people.</li><li>Use these when asked “can you build a team?”</li></ul></div></div></div>
+      <div class="flash"><div class="flash-inner"><div class="face front"><div class="symbol">🏢</div><b>CEO → SALES</b><small>Why leave senior title?</small><div class="flip-hint">Tap to flip</div></div><div class="face back"><h3>Your career direction</h3><ul><li>CEO was a turnaround / sale mandate.</li><li>Useful senior perspective, not desired permanent job shape.</li><li>You want leadership + frontline commercial work.</li></ul></div></div></div>
+      <div class="flash"><div class="flash-inner"><div class="face front"><div class="symbol">⚠️</div><b>KPIs ≠ ACTIVITY THEATRE</b><small>Your cultural fit question</small><div class="flip-hint">Tap to flip</div></div><div class="face back"><h3>Watchpoint</h3><ul><li>Erik explicitly mentioned KPIs + reporting.</li><li>You support disciplined forecasting.</li><li>You do not want high-pressure activity micromanagement.</li><li>Probe the board / Bridgepoint cadence.</li></ul></div></div></div>
+    </div>
+  </section>
+
+  <section id="test" class="tab">
+    <div class="note"><b>Recall test.</b> Type the answer you would actually give. Then reveal the anchor answer and run the simple keyword check. The score is only a memory aid — it is <b>not</b> semantic grading.</div>
+    <div class="testbox">
+      <div class="prompt">
+        <div id="qnum" class="qnum"></div>
+        <div id="question" class="question"></div>
+        <textarea id="answer" placeholder="Type what you would actually say in the interview..."></textarea>
+        <div class="actions">
+          <button class="btn primary" id="check">Check anchors</button>
+          <button class="btn secondary" id="reveal">Show model anchors</button>
+          <button class="btn" id="next">Next question →</button>
+          <span class="wordcount" id="wordcount">0 words</span>
+        </div>
+      </div>
+      <div class="feedback">
+        <h3>Model anchors</h3>
+        <div id="model" style="color:var(--muted)">Write your answer first, then reveal.</div>
+        <div id="anchorResults" class="anchor-results"></div>
+        <div id="score" class="scoreline">Memory target: hit the main idea + one proof point. You do not need every keyword.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="questions" class="tab">
+    <div class="note"><b>These are now questions for Surikat itself</b>, not generic recruiter questions. Prioritise the ones that reveal the actual growth model, authority, resources and operating culture.</div>
+    <div class="grid ask">
+      <article class="card"><h3>1. What does “triple revenue” actually mean?</h3><ul><li>Over what time horizon?</li><li>How much is expected from new logos vs expansion?</li><li>Which geographies / segments matter most?</li></ul><div class="key purple">Understand the maths behind the ambition.</div></article>
+      <article class="card"><h3>2. Why has inbound worked so well?</h3><ul><li>Where do leads come from today?</li><li>Which product / customer problem pulls them in?</li><li>What do the best customers have in common?</li></ul><div class="key green">Their inbound history is the dataset for your outbound strategy.</div></article>
+      <article class="card"><h3>3. What exactly am I inheriting?</h3><ul><li>Current pipeline? CRM? marketing support?</li><li>Who sells today — Andreas, founders, product leaders?</li><li>Existing account / customer-success resource?</li></ul></article>
+      <article class="card"><h3>4. First hires and budget?</h3><ul><li>When would they expect the first sales hire?</li><li>Which roles first: AE, BDR, account, marketing / ops?</li><li>Is headcount already budgeted or must growth fund it?</li></ul></article>
+      <article class="card"><h3>5. What does success look like after 12 months?</h3><ul><li>Revenue / logos?</li><li>Qualified pipeline?</li><li>Repeatable process?</li><li>Team hired?</li><li>Forecast confidence?</li></ul><div class="key">Force prioritisation: what matters most?</div></article>
+      <article class="card"><h3>6. How much authority comes with the mandate?</h3><ul><li>Hiring / team design?</li><li>Pricing and discounting?</li><li>CRM / methodology?</li><li>GTM / market prioritisation?</li></ul><div class="key purple">Responsibility without authority is a warning sign.</div></article>
+      <article class="card"><h3>7. How does Bridgepoint work with management?</h3><ul><li>Which commercial KPIs reach the board?</li><li>How often?</li><li>How involved are they in targets / hiring / GTM?</li></ul><div class="key amber">Clarify whether “discipline” means visibility or micromanagement.</div></article>
+      <article class="card"><h3>8. What are typical deals?</h3><ul><li>Contract value / recurring mix?</li><li>Average sales cycle?</li><li>Buyer and technical stakeholders?</li><li>Implementation / procurement complexity?</li></ul></article>
+      <article class="card"><h3>9. What would Andreas want to stop doing?</h3><ul><li>Which sales activities currently sit with the CEO?</li><li>Which relationships should remain CEO-led?</li><li>What does he most want the Sales Lead to take ownership of?</li></ul></article>
+      <article class="card"><h3>10. Where do you expect this person to challenge you?</h3><ul><li>What commercial habits should change?</li><li>What assumptions are open to challenge?</li><li>What would be politically difficult to change?</li></ul><div class="key">A strong mandate should tolerate constructive challenge.</div></article>
+      <article class="card"><h3>11. What is the intended player / coach mix?</h3><ul><li>First 6 months?</li><li>After first hires?</li><li>Longer term?</li></ul><div class="key green">Make sure “Sales Lead” does not become pure management too quickly.</div></article>
+      <article class="card"><h3>12. Co-investment opportunity?</h3><ul><li>When does it become available?</li><li>Who is eligible?</li><li>How is it typically structured?</li></ul><div class="key purple">Ask later in the process, once mutual fit is established.</div></article>
+    </div>
+    <div class="callout"><strong>Best cultural-fit probe:</strong> “When you talk about KPIs and reporting, what information does the management team genuinely use to make decisions — and what does the day-to-day cadence look like for the sales team?”</div>
+  </section>
+
+  <footer>Source for the “Latest” material: Erik Brechter / Navigio screening conversation, 17 Aug 2026. Prepared as memory anchors — not a script.</footer>
 </main>
+<script>
+  const tabButtons=[...document.querySelectorAll('.tabbtn')];
+  const tabs=[...document.querySelectorAll('.tab')];
+  tabButtons.forEach(btn=>btn.addEventListener('click',()=>{
+    tabButtons.forEach(b=>b.classList.remove('active'));tabs.forEach(t=>t.classList.remove('active'));
+    btn.classList.add('active');document.getElementById(btn.dataset.tab).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});
+  }));
+  document.querySelectorAll('.flash').forEach(card=>card.addEventListener('click',()=>card.classList.toggle('flipped')));
+
+  const tests=[
+    {q:'Why is Surikat hiring a Sales Lead now?', anchors:['inbound','sales organisation','bridgepoint','triple','growth'], model:['Historically inbound-led with almost no formal sales organisation.','Bridgepoint investment accelerated the growth ambition.','The company now wants to triple revenue, so it needs a proactive, repeatable commercial engine.']},
+    {q:'Describe the role in the three parts Erik gave you.', anchors:['sell','build','kpi','report','ceo','bridgepoint'], model:['SELL: own sales strategy and personally drive major customer sales.','BUILD: structure, methodology, KPIs, reporting, recruit and develop the team.','BRIDGE: work between CEO Andreas, board and Bridgepoint on commercial direction.']},
+    {q:'Why are you a strong fit for this particular situation?', anchors:['full-cycle','international','outbound','build','team','hands-on'], model:['Hands-on international full-cycle B2B sales.','Proven experience moving an inbound-led tech proposition toward proactive outbound.','Separate evidence for process building and team leadership.','You want a player-coach role, not pure management.']},
+    {q:'Have you actually built and led sales teams?', anchors:['padani','theo','recruit','develop','team'], model:['Do not use Precisely as the people-leadership example.','Padani: recruited/developed a small team and nearly doubled turnover in year one.','Theo Fennell: led an experienced team through standards, direction and performance.']},
+    {q:'What would you do in your first 90 days at Surikat?', anchors:['learn','customer','pipeline','sell','process','hire'], model:['Learn product, customer workflows, best accounts and current inbound engine.','Map ICP, buyers, sales cycle, pricing and pipeline.','Start selling early.','Add only the process/KPIs the evidence requires; define first hiring profile.']},
+    {q:'How would you introduce KPIs and forecasting without creating a sales bureaucracy?', anchors:['evidence','qualified','next step','win rate','cycle','vanity'], model:['Use KPIs that improve behaviour or decisions.','Forecast from evidence: stakeholder, problem, next step, decision path and timing.','Track conversion / win rate / cycle / qualified pipeline.','Avoid vanity activity metrics and reporting theatre.']},
+    {q:'Why leave a CEO title for Sales Lead?', anchors:['mandate','acquisition','hands-on','commercial','customers'], model:['CEO was a turnaround / acquisition mandate, not the long-term career destination.','It gave you senior leadership and investor-level perspective.','Your strongest motivation remains hands-on commercial work: customers, opportunities and growth.']},
+    {q:'What is the biggest risk or unknown you still need to test?', anchors:['kpi','report','bridgepoint','culture','micromanagement'], model:['Erik confirmed KPIs and reporting are part of the build.','You need to distinguish healthy commercial discipline from high-pressure activity micromanagement.','Ask what information the CEO/board actually uses and what the day-to-day cadence looks like.']}
+  ];
+  let qi=0;const qnum=document.getElementById('qnum'),question=document.getElementById('question'),answer=document.getElementById('answer'),model=document.getElementById('model'),results=document.getElementById('anchorResults'),score=document.getElementById('score'),wc=document.getElementById('wordcount');
+  function renderQ(){const t=tests[qi];qnum.textContent=`Question ${qi+1} of ${tests.length}`;question.textContent=t.q;answer.value='';model.textContent='Write your answer first, then reveal.';results.innerHTML='';score.textContent='Memory target: hit the main idea + one proof point. You do not need every keyword.';wc.textContent='0 words';}
+  function reveal(){model.innerHTML='<ul>'+tests[qi].model.map(x=>`<li>${x}</li>`).join('')+'</ul>';}
+  function check(){const text=answer.value.toLowerCase();const a=tests[qi].anchors;let hits=0;results.innerHTML=a.map(k=>{const hit=text.includes(k.toLowerCase());if(hit)hits++;return `<span class="anchor-chip ${hit?'hit':'miss'}">${hit?'✓':'○'} ${k}</span>`}).join('');score.textContent=`Anchor check: ${hits}/${a.length} keywords detected. Use this only as a recall signal — wording and synonyms can still be strong.`;}
+  answer.addEventListener('input',()=>{const n=answer.value.trim()?answer.value.trim().split(/\s+/).length:0;wc.textContent=`${n} word${n===1?'':'s'}`});
+  document.getElementById('reveal').addEventListener('click',reveal);document.getElementById('check').addEventListener('click',()=>{check();reveal()});document.getElementById('next').addEventListener('click',()=>{qi=(qi+1)%tests.length;renderQ()});renderQ();
+</script>
 </body>
 </html>
